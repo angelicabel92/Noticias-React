@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import HeaderComponent from './components/headerComponent';
 import NewsComponent from './components/NewsComponent';
+import FormComponent from './components/FromComponent';
 
 class AppComponent extends Component {
   state = {
@@ -25,6 +26,7 @@ class AppComponent extends Component {
     return (
       <Fragment>
         <HeaderComponent title={'Noticias'}/>
+        <FormComponent/>
         <NewsComponent news={this.state.news}/>
       </Fragment>
     );  
