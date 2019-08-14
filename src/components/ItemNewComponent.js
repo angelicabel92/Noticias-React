@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ItemNewsComponent = ({newItem}) => {
     //Extracción de datos
@@ -21,5 +22,9 @@ const ItemNewsComponent = ({newItem}) => {
         </div>
     );
  }
+
+ ItemNewsComponent.propType = {
+    newItem: PropTypes.object.isRequired
+}
 
 export default ItemNewsComponent;

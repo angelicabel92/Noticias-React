@@ -12,8 +12,8 @@ class AppComponent extends Component {
     this.getNews();
   }
 
-  getNews = async () => {
-    const url = `https://newsapi.org/v2/top-headlines?country=co&category=business&apiKey=2c74a40a91894bcb977a43ad0a7094c5`;
+  getNews = async (category = 'general') => {
+    const url = `https://newsapi.org/v2/top-headlines?country=co&category=${category}&apiKey=2c74a40a91894bcb977a43ad0a7094c5`;
     const res = await fetch(url);
     const news = await res.json();
 
@@ -26,7 +26,7 @@ class AppComponent extends Component {
     return (
       <Fragment>
         <HeaderComponent title={'Noticias'}/>
-        <FormComponent/>
+        <FormComponent getNews={this.getNews} />
         <NewsComponent news={this.state.news}/>
       </Fragment>
     );  

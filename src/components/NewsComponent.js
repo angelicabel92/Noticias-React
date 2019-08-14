@@ -1,5 +1,6 @@
 import React from 'react';
 import ItemNewsComponent from './ItemNewComponent';
+import PropTypes from 'prop-types';
 
 const NewsComponent = ({news}) => (
     <div className="container">
@@ -10,5 +11,9 @@ const NewsComponent = ({news}) => (
         </div>
     </div>
 );
+
+NewsComponent.propType = {
+    news: PropTypes.array.isRequired
+}
 
 export default NewsComponent;
